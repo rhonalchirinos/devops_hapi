@@ -6,7 +6,7 @@ const pg = require('pg');
 const { Client } = pg;
 
 const config = {
-    host: '127.0.0.1',
+    host: 'db',
     port: 5432,
     database: 'devops',
     user: 'devops',
@@ -42,7 +42,6 @@ const init = async () => {
 process.on('unhandledRejection', (err) => {
 
     console.log(err);
-    db.close();
     process.exit(1);
 });
 
